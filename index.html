@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Legislative Assembly Web App</title>
+    <meta name="description" content="Legislative Assembly Web App - Transparency Portal">
+</head>
+<body>
+    <header>
+        <h1>Legislative Assembly Web App</h1>
+    </header>
+    <main>
+        <!-- Existing Content -->
+        <section id="data-list">
+            <!-- Data will be displayed here -->
+        </section>
+        <section id="form-section">
+            <h2>Submit Data</h2>
+            <form id="data-form">
+                <label for="text-input">Enter Text:</label>
+                <input type="text" id="text-input" required>
+                <label for="date-input">Select Date:</label>
+                <input type="date" id="date-input">
+                <button type="submit">Search on Map</button>
+            </form>
+        </section>
+
+        <!-- Transparency Portal Section -->
+        <section id="transparency-portal">
+            <h2>Portal Legislativo</h2>
+            <p>The legislative portal is a transparency tool that intelligently connects the actions of Senators, State Deputies, Federal Deputies, and the population, providing essential information and improving transparency and oversight conditions, complying with the Access to Information Law</p>
+
+            <!-- Map Section -->
+            <div id="map" style="height: 400px;"></div>
+        </section>
+    </main>
+    <script src="app.js"></script>
+    <script src="map.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>

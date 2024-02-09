@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const dataForm = document.getElementById('data-form');
     const dateInput = document.getElementById('date-input');
 
-    // Fetch data from API and display
+    // Fetch data 
     fetchData();
 
-    // Handle form submission
+    // Handle submission
     dataForm.addEventListener('submit', async (event) => {
         event.preventDefault();
         const textInput = document.getElementById('text-input').value;
@@ -28,42 +28,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayData(data) {
-        dataList.innerHTML = ''; // Clear previous data
+        dataList.innerHTML = ''; // clearing data
         data.forEach(item => {
             const listItem = document.createElement('div');
-            listItem.textContent = item; // Adjust this based on your API response structure
+            listItem.textContent = item;
             dataList.appendChild(listItem);
         });
     }
 
     function searchOnMap(textQuery, dateQuery) {
-        // Implement your logic to highlight or filter markers based on the search queries
-        // For simplicity, let's just log the queries for now
+    
         console.log('Text Search:', textQuery);
         console.log('Date Search:', dateQuery);
 
-        // Check if the action exists on the map
+  
         const actionExists = checkActionOnMap(textQuery, dateQuery);
 
         if (!actionExists) {
-            // If the action doesn't exist, display a message
+            
             console.log('Action does not exist on the map.');
-            // You can add code here to display a message to the user on the webpage
+           
             displayMessage('Action does not exist on the map.');
         }
     }
 
     function checkActionOnMap(textQuery, dateQuery) {
-        // Implement your logic to check if the action exists on the map
-        // For simplicity, let's assume the action exists if both text and date queries are not empty
+     
         return textQuery.trim() !== '' || dateQuery.trim() !== '';
     }
 
     function displayMessage(message) {
-        // Display the message on the webpage
+      
         const messageContainer = document.createElement('div');
         messageContainer.textContent = message;
-        messageContainer.style.color = 'red'; // Customize the styling as needed
+        messageContainer.style.color = 'red'; 
         document.body.appendChild(messageContainer);
     }
 });
